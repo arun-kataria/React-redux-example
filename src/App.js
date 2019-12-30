@@ -4,8 +4,9 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 import Create from './components/create.component';
 import Edit from './components/edit.component';
-import Index from './components/index.component';
-import View from './components/view.component';
+//import Index from './components/index.component';
+//import View from './components/view.component';
+import Hoc from './components/hoc/hoc-main.component';
 
 class App extends Component {
   render() {
@@ -13,15 +14,16 @@ class App extends Component {
       <Router>
         <div className="container">
           <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            <Link to={'/'} className="navbar-brand">Detail Management</Link>
-            <Link to={'/'} className="nav-link">Home</Link>
-            <Link to={'/create'} className="nav-link">Create</Link>
-            <Link to={'/index'} className="nav-link">View</Link>
+            <Link to={'/'} className="navbar-brand">React Example</Link>
+            {/* <Link to={'/'} className="nav-link">Home</Link> */}
+            <Link to={'/create'} className="nav-link">Reduc-Create</Link>
+            <Link to={'/index'} className="nav-link">Redux-View</Link>
+            <Link to={'/hoc'} className="nav-link">HOC</Link>
           </nav> <br />
           <Switch>
             <Route exact path='/create' component={Create} />
             <Route path='/edit/:id' component={Edit} />
-            <Route path='/index' component={Index} />
+            <Route path='/hoc' component={Hoc} />
           </Switch>
         </div>
       </Router>
